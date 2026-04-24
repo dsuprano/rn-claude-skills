@@ -1,49 +1,32 @@
-cat > docs/INSTALLATION.md <<'EOF'
 # Installation
 
 ## Requisitos
 - Git
 - Claude Code instalado
-- Acceso a `~/.claude/skills/`
 
 ## Instalación global
+Instala las skills para todos tus proyectos:
 
 ```bash
-git clone https://github.com/TU_USUARIO/claude-code-rules.git
-cd claude-code-rules
-./install.sh
+./install-global.sh
 ```
 
-Esto copiará todas las skills a:
-
+Destino:
 ```bash
 ~/.claude/skills/
 ```
 
+## Instalación por proyecto
+Instala las skills solo en el repo actual:
+
+```bash
+./install-project.sh
+```
+
+Destino:
+```bash
+.claude/skills/
+```
+
 ## Verificación
-
-Comprueba que existan:
-
-```bash
-ls ~/.claude/skills
-```
-
-Deberías ver:
-
-- rn-arch-audit
-- rn-cleanup
-- rn-quality-gate
-- rn-test-guard
-
-## Reinstalación
-
-```bash
-./install.sh
-```
-
-## Actualización
-
-```bash
-./update.sh
-```
-EOF
+Comprueba que existen carpetas de skill con `SKILL.md` dentro.

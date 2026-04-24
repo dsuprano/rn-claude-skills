@@ -1,11 +1,10 @@
-cat > install.sh <<'EOF'
 #!/usr/bin/env bash
 set -e
 
 REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
 TARGET_DIR="$HOME/.claude/skills"
 
-echo "==> Instalando skills en: $TARGET_DIR"
+echo "==> Instalando skills globales en $TARGET_DIR"
 mkdir -p "$TARGET_DIR"
 
 for skill_dir in "$REPO_DIR"/skills/*; do
@@ -16,6 +15,4 @@ for skill_dir in "$REPO_DIR"/skills/*; do
   cp -R "$skill_dir" "$TARGET_DIR/$skill_name"
 done
 
-echo "✅ Skills instaladas correctamente"
-echo "Ruta destino: $TARGET_DIR"
-EOF
+echo "✅ Instalación global completada"

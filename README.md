@@ -1,26 +1,35 @@
 # Claude Code Rules
 
-Colección de skills personalizadas para Claude Code, enfocadas en React Native + TypeScript + MobX + React Navigation.
+Colección escalable de skills para Claude Code, orientadas a React Native, TypeScript, arquitectura, calidad y testing.
+
+## Objetivo
+Mantener un repositorio reutilizable de skills:
+- fáciles de instalar
+- fáciles de extender
+- modulares
+- optimizadas para progressive disclosure
 
 ## Skills incluidas
+- rn-arch-audit
+- rn-cleanup
+- rn-quality-gate
+- rn-test-guard
 
-- `rn-arch-audit`: auditoría de arquitectura, refactor y estandarización
-- `rn-cleanup`: limpieza técnica y eliminación segura de dead code
-- `rn-quality-gate`: deja TSC + ESLint sin errores ni warnings
-- `rn-test-guard`: verifica, actualiza y crea tests para alcanzar cobertura mínima del 80%
-
-## Instalación rápida
+## Instalación global
 
 ```bash
-git clone https://github.com/TU_USUARIO/claude-code-rules.git
-cd claude-code-rules
-./install.sh
+./install-global.sh
+```
+
+## Instalación por proyecto
+
+```bash
+./install-project.sh
 ```
 
 ## Actualización
 
 ```bash
-cd claude-code-rules
 ./update.sh
 ```
 
@@ -30,42 +39,26 @@ cd claude-code-rules
 ./validate.sh
 ```
 
-## Uso en Claude Code
-
-```txt
-/rn-arch-audit
-/rn-arch-audit src/features/chat
-
-/rn-cleanup
-/rn-cleanup src/features/chat
-
-/rn-quality-gate
-/rn-quality-gate src/core
-
-/rn-test-guard
-/rn-test-guard src/features/auth
-```
-
-## Instalación manual
-
-Claude Code carga skills desde:
+## Crear una nueva skill
 
 ```bash
-~/.claude/skills/
+./new-skill.sh nombre-skill
 ```
 
-Cada skill debe vivir en su propia carpeta y contener un archivo `SKILL.md`.
-
-## Estructura del repositorio
+## Estructura
+Cada skill vive en:
 
 ```txt
-skills/
-  rn-arch-audit/
-    SKILL.md
-  rn-cleanup/
-    SKILL.md
-  rn-quality-gate/
-    SKILL.md
-  rn-test-guard/
-    SKILL.md
+skills/<skill-name>/
+├── SKILL.md
+├── docs/
+├── examples/
+└── scripts/
 ```
+
+## Filosofía
+- skills pequeñas y especializadas
+- `SKILL.md` corto
+- detalles largos en `docs/`
+- ejemplos en `examples/`
+- validación automática
