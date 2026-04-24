@@ -1,4 +1,3 @@
-cat > README.md <<'EOF'
 # Claude Code Rules
 
 Colección de skills personalizadas para Claude Code, enfocadas en React Native + TypeScript + MobX + React Navigation.
@@ -70,4 +69,3 @@ skills/
   rn-test-guard/
     SKILL.md
 ```
-EOF
